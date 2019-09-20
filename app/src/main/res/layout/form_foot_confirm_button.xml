@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="108dp">
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="30dp"
+        android:text="计 算"
+        android:background="@drawable/background_primary_color_gradient"
+        android:textColor="#FFF"
+        android:textSize="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </Button>
+</LinearLayout>

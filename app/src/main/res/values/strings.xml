@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">房贷计算器</string>
+    <string name="action_settings">Settings</string>
+    // 控制器标题
+    <string name="commercial_loan_title">商贷</string>
+    <string name="fund_loan_title">公积金贷</string>
+    <string name="group_loan_title">组合贷</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/nav_left_button"
+        android:scaleType="fitCenter"
+        android:layout_width="50dp"
+        android:layout_height="26dp"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/navigation_title"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="18sp">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/nav_right_button"
+        android:background="@null"
+        android:layout_width="50dp"
+        android:layout_height="30dp">
+    </ImageButton>
+
+</LinearLayout>
