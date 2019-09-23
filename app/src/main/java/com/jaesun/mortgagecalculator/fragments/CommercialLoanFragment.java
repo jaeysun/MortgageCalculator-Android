@@ -1,6 +1,5 @@
 package com.jaesun.mortgagecalculator.fragments;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -56,7 +55,7 @@ public class CommercialLoanFragment extends Fragment {
     private EditText areaEditText; // 房屋面积
     private EditText perPriceEditText; // 单价
 
-    private LoanModel loanModel;
+    private LoanModel loanModel = new LoanModel();
 
     private TextView rateTextView;
     private TextView dateTextView;
@@ -66,7 +65,6 @@ public class CommercialLoanFragment extends Fragment {
 
 
     public CommercialLoanFragment() {
-        loanModel = new LoanModel();
         rateList = new ArrayList<>();
         for (int i = 0; i < 7; i ++) {
             int count =  10 * i + 70;
@@ -112,8 +110,11 @@ public class CommercialLoanFragment extends Fragment {
         formModels.add(new FormModel(R.layout.form_item_input_default,"面积(平方米)","请输入住房面积"));
         formModels.add(new FormModel(R.layout.form_item_input_default,"单价(元/平方米)","请输入单价"));
         formModels.add(new FormModel(R.layout.form_item_option,"首付比例","3 成",firstList));
+        loanModel.setFirstPurchaseRate(3);
         formModels.add(new FormModel(R.layout.form_item_option,"实际贷款利率(%)","4.90",rateList));
+        loanModel.setRate((float) 4.9);
         formModels.add(new FormModel(R.layout.form_item_option,"贷款期限(年)","30",dateList));
+        loanModel.setYearCount(30);
         formModels.add(new FormModel(R.layout.form_foot_confirm_button,"计算"));
     }
     private void initDatePicker() {
@@ -122,10 +123,13 @@ public class CommercialLoanFragment extends Fragment {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 dateTextView.setText(String.format("%d",5 * options1 +5));
-                loanModel.setYearCount(options1+5);
+                loanModel.setYearCount(5 * options1 + 5);
             }
         }).setDecorView(
-                (ViewGroup)getActivity().getWindow().getDecorView().findViewById(android.R.id.content))
+                (ViewGroup)getActivity()
+                        .getWindow()
+                        .getDecorView()
+                        .findViewById(android.R.id.content))
                 .build();
         datePicker.setPicker(dateList);
     }
@@ -135,6 +139,7 @@ public class CommercialLoanFragment extends Fragment {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 firstTextView.setText(String.format("%d 成",options1 +3));
+                loanModel.setFirstPurchaseRate(options1+3);
             }
         }).setDecorView(
                 (ViewGroup)getActivity().getWindow().getDecorView().findViewById(android.R.id.content))
@@ -313,6 +318,22 @@ public class CommercialLoanFragment extends Fragment {
                             else {
                                loanModel.setAmount(Float.parseFloat(loanAmountEditText.getText().toString().trim()));
                                Log.d("lanAmount",loanModel.getAmount()+"");
+                            }
+                        }
+                        else if ("1".equals(countType)){
+                            if (areaEditText.getText().toString().trim().equals("")) {
+                                Toast.makeText(getContext(), "请输入房屋面积", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            else if (perPriceEditText.getText().toString().trim().equals("")) {
+                                Toast.makeText(getContext(), "请输入房屋单价", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            else {
+                                Float amount =  Float.valueOf(perPriceEditText.getText().toString().trim()) * Float.valueOf(areaEditText.getText().toString().trim());
+
+                                loanModel.setAmount(amount/10000*(10-loanModel.getFirstPurchaseRate())/10);
+                                Log.d("lanAmount",loanModel.getAmount()+"");
                             }
                         }
                         Intent intent = new Intent(getActivity(), ResultActivity.class);

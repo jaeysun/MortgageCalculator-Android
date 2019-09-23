@@ -4,19 +4,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class LoanModel implements Parcelable {
-    float amount; // 贷款总金额
-    float rate;   // 贷款利率
+    float amount;     // 商贷总金额
+    float fundAmount; // 公积金贷款总金额
+    float rate;       // 商贷利率
+    float fundRate;   // 公积金贷款利率
     float firstPurchaseRate; // 首付比例
-    int yearCount; // 贷款年限
+    int yearCount;    // 贷款年限
     float area;       // 房屋面积
     float perPrice;   // 房屋单价
 
     public LoanModel() {
     }
 
+
     protected LoanModel(Parcel in) {
         amount = in.readFloat();
+        fundAmount = in.readFloat();
         rate = in.readFloat();
+        fundRate = in.readFloat();
         firstPurchaseRate = in.readFloat();
         yearCount = in.readInt();
         area = in.readFloat();
@@ -35,6 +40,23 @@ public class LoanModel implements Parcelable {
         }
     };
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeFloat(amount);
+        parcel.writeFloat(fundAmount);
+        parcel.writeFloat(rate);
+        parcel.writeFloat(fundRate);
+        parcel.writeFloat(firstPurchaseRate);
+        parcel.writeInt(yearCount);
+        parcel.writeFloat(area);
+        parcel.writeFloat(perPrice);
+    }
+
     public float getAmount() {
         return amount;
     }
@@ -43,12 +65,28 @@ public class LoanModel implements Parcelable {
         this.amount = amount;
     }
 
+    public float getFundAmount() {
+        return fundAmount;
+    }
+
+    public void setFundAmount(float fundAmount) {
+        this.fundAmount = fundAmount;
+    }
+
     public float getRate() {
         return rate;
     }
 
     public void setRate(float rate) {
         this.rate = rate;
+    }
+
+    public float getFundRate() {
+        return fundRate;
+    }
+
+    public void setFundRate(float fundRate) {
+        this.fundRate = fundRate;
     }
 
     public float getFirstPurchaseRate() {
@@ -83,18 +121,7 @@ public class LoanModel implements Parcelable {
         this.perPrice = perPrice;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(amount);
-        parcel.writeFloat(rate);
-        parcel.writeFloat(firstPurchaseRate);
-        parcel.writeInt(yearCount);
-        parcel.writeFloat(area);
-        parcel.writeFloat(perPrice);
+    public static Creator<LoanModel> getCREATOR() {
+        return CREATOR;
     }
 }

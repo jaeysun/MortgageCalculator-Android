@@ -30,20 +30,20 @@
         <RadioButton
             android:id="@+id/today_tab"
             style="@style/AppBottomTabBar.Item"
-            android:drawableTop="@drawable/tab_icon_msg"
+            android:drawableTop="@drawable/tab_icon_commercial"
             android:checked="true"
             android:text="@string/commercial_loan_title" />
 
         <RadioButton
             android:id="@+id/record_tab"
             style="@style/AppBottomTabBar.Item"
-            android:drawableTop="@drawable/tab_icon_contact"
+            android:drawableTop="@drawable/tab_icon_fund"
             android:text="@string/fund_loan_title" />
 
         <RadioButton
             android:id="@+id/contact_tab"
             style="@style/AppBottomTabBar.Item"
-            android:drawableTop="@drawable/tab_icon_space"
+            android:drawableTop="@drawable/tab_icon_group"
             android:text="@string/group_loan_title" />
 
     </RadioGroup>

@@ -2,11 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_checked="false"
-        android:drawable="@drawable/icon_tab_space_nor">
+        android:drawable="@drawable/icon_tab_group_nor">
 
     </item>
     <item
         android:state_checked="true"
-        android:drawable="@drawable/icon_tab_space_sel">
+        android:drawable="@drawable/icon_tab_group_sel">
     </item>
 </selector>

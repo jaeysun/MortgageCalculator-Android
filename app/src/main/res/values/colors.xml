@@ -11,7 +11,7 @@
     <color name="color_bottom_bar">#FFF5F5F5</color>
     <color name="color_bottom_bar_line">#000000</color>
     <color name="color_bottom_bar_item_selected">#1296db</color>
-    <color name="color_bottom_bar_item_nor">#AAAAAA</color>
+    <color name="color_bottom_bar_item_nor">#8a8a8a</color>
 
     <color name="colorLowProfile">#AAAAAA</color>
 </resources>

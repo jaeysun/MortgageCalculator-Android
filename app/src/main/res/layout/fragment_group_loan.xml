@@ -5,5 +5,256 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.GroupLoanFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="15dp"
+                android:layout_height="47dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="商贷总额(万元)">
+                </TextView>
+                <EditText
+                    android:id="@+id/editTextCommercialAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:inputType="numberSigned"
+                    android:gravity="right|center_vertical"
+                    android:textSize="14dp"
+                    android:hint="请输入金额">
+                </EditText>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ccc"
+                android:layout_marginHorizontal="15dp">
+            </TextView>
+        </LinearLayout>
 
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/containerCommercialRate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="实际商贷利率(%)："
+                    android:textColor="#000"
+                    android:textSize="14dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewCommercialRate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="4.9"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14dp">
+
+                </TextView>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_right_arrow">
+                </ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ccc"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="15dp"
+                android:layout_height="47dp">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="公积金贷总额(万元)">
+                </TextView>
+                <EditText
+                    android:id="@+id/editTextFundAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:inputType="numberSigned"
+                    android:gravity="right|center_vertical"
+                    android:textSize="14dp"
+                    android:hint="请输入金额">
+                </EditText>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ccc"
+                android:layout_marginHorizontal="15dp">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/containerFundRate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                tools:ignore="InvalidId">
+                <TextView
+                    android:id="@+id/form_item_title"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="实际公积金贷利率(%)："
+                    android:textColor="#000"
+                    android:textSize="14dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewFundRate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="3.25"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14dp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_right_arrow">
+                </ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ccc"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerYear"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="贷款年限(年)："
+                    android:textColor="#000"
+                    android:textSize="14dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewYear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="30"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14dp">
+
+                </TextView>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_right_arrow">
+                </ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ccc"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="108dp">
+            <Button
+                android:id="@+id/buttonConfirm"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="30dp"
+                android:text="计 算"
+                android:background="@drawable/background_primary_color_gradient"
+                android:textColor="#FFF"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
